@@ -1,0 +1,505 @@
+Phoenix BIOS Editor 2.2.13 for Windows    
+Release Notes
+Copyright(C)  2004-2008 Phoenix Technologies Ltd. 
+
+
+
+Product Description
+===================
+
+Phoenix BIOS Editor is for Phoenix Core System Software.It allows user to modify the pre-built ROM image without the source code.
+It's based on Phoenix TrustedCore or PhoenixBIOS 4.0 Rel. 6 and later.
+
+
+
+Documentation Description
+=========================
+
+This document contains information regarding the major changes to BIOS Editor 2.2.06
+
+
+
+Related Technical Documentations
+================================
+
+User Guide
+
+
+
+Known Issues
+============ 
+
+ 1. 'ACPI Editor' may not function on some Windows 98 systems. The symptom is:
+    When activating the 'ACPI Editor' window, the application only shows 
+    'Disassembling ASL....' message but the ACPI window never shows up
+
+ 2. Image corruption may occur when using 256-color mode. Setting the video to
+    256-color mode, press 'Paste' button on the 'Quiet Boot/Splash Screen'
+    window, will result in a corrupted image.
+  
+ 3. In Vista32/64,User must rDisable UAP (Disable User Account Protection). Execute it directly may not run correctly.
+    Step1: Run "msconfig" in command windows
+    Step2: Tools panel-->Disable UAP (Disable User Account Protection (Requires reboot))-->click Launch button.
+    Step3: Reboot.
+
+
+
+Revision History
+================
+2.2.13        06/13/2008
+ 1. Fixed Issues:
+    *Support EFI_VARIABLE and SETUP_VARIABLE of MV BIOS.(SPR024615)
+
+2.2.12	      05/28/2008
+ 1. Fixed Issues:
+    *Building MV BIOS would fail with an error occurred after running BIOSEdit.(SPR024570) 
+
+2.2.11	      11/07/2007
+ 1. Fixed Issues:
+    *UUID displays abnormal after being edited with BIOSEdit.(SPR022354) 
+
+
+2.2.10	      10/31/2007
+ 1. Fixed Issues:
+    *Cannot find PCI IRQ Table when editing SecureCore.(SPR022237) 
+
+2.2.09	      09/28/2007
+ 1. Fixed Issues:
+    *Update for newest SecureCore.(SPR021476)
+
+2.2.08	      06/12/2007
+ 1. Fixed Issues:
+    *Update for Benton,fix the issue that can not rebuild a Benton BIOS.
+
+2.2.07	      06/01/2007
+ 1. New Features: 
+    *Support new GUI(Generic001 which has logo and shadow)
+    *Update for Benton.(Add new module type support,ROM.SCR command support,update tools... --SPR019932)
+
+2.2.06	      04/24/2007
+ 1. New Features:
+    *Support features customization by modifying BIOS.INI.
+
+
+2.2.05	      02/28/2007
+ 1. Fixed Issues:
+    *BIOSEdit can't find BCP structures in some BIOS(SPR018930).
+
+2.2.04	      02/12/2007
+ 1. New Features:
+    *Support project "Benten".(ECR018385)
+
+2.2.03	      12/12/2006
+ 1. Fixed Issues: 
+    *BIOSEdit can't build after change option rom(CSE:SPR000990).
+
+2.2.02	      12/04/2006
+ 1. Fixed Issues:
+    *Enhance the compatibility of GUI tools that BIOSEditor uses, to avoid a run time error when edit some bmp logos.
+    *Update build tools for the newest SP3b BIOS
+
+2.2.01        09/19/2006
+
+ 1. Fixed Issues:
+    *Support new build command:"BIOSENTRY" (SPR015537)
+    *BIOSEdit update aligning with PSI/FFS change (ECR012909) 
+    *Support BIOSEdit Pro under 32 and 64 bit Vista OS (ECR012910)
+    *Give more functions when editting a Hole(compress HOLE,show more information of HOEL) (ECR013108)
+    *Support editing CMOS defaults for free-form nodes (ECR010336)
+ 2. Fixed Issues:
+    *System cannot boot-up via the BIOS ROM file which is built by BIOS Editor(SPR011658)
+
+2.1.05        08/31/2006
+ 1.Fixed Issues:
+    *BIOS Editor can't boot after changing the logo of a BIOS who has GUI2 feature
+
+2.1.04        08/23/2006
+ 1.Fixed Issues:
+    *BIOS Editor can't emulate logo correctly  (For SPR016170)
+
+2.1.03	       03/20/2006
+ 1.Fixed Issues:
+    *BIOSEdit can't add a hole whose size is bigger than 64k
+    *BIOSEdit can't set the location of hole to the 2nd 1M in BIOS image
+    
+2.1.02         03/03/2006
+ 1.Fixed Issues:
+    *The max size of BIOS image supported increase from 1M to 4GB
+
+2.1.01         01/25/2006
+ 1.Fixed Issues:
+    *Can't properly replace logos in some older builds of BIOS(For SPR011980)
+    *Runtime error when attempting to modify Splash Screen if it's a legacy Bios with Splash3 feature (For SPR012213)
+
+2.1.00         01/06/2006
+ 1.New Features:
+    *Support Flash File System,integrate new tools into BIOSEDIT
+    *Integrate new Online-help system into BiosEdit
+ 2.Fixed Issues:
+    *BIOSEDIT will crash when changing foreground logo(just like Phoenix logo) if the logo is JPEG format
+    *BIOSEDIT doesn't support import a JPEG file to replace a BMP logo,so give user a warning instead of crashing
+    *BIOSEDIT has no response when set unsupport=0,DBCS=0 or newlogo=0 in BIOSEDIT.ini
+    *Some BCP structure can not be identified
+    *Can not Emulate Boot Screen after changing the Picture
+
+2.0.27		01/11/2005
+ 1. Fixed Issues:
+    * Can't build new BIOS (overflow error) upon large setup table (> 32K)
+    * BIOSEDIT will crash when double-click panel list node "LOGO"
+    * Give a warning when JPEG core run in a wrong video mode
+ 2. Delete Features:
+    *Remove the security feature so that any user without licence can biuld new BIOS and needn't write a fingerprint in the output ROM
+
+2.0.26		08/10/2005
+ 1. New Features:
+    * BCP Window
+	- Maximum number of BCP increased from 33 to 128
+	- Use combo box to select BCP instead of existing radio button
+    * PCI Routing Table
+	- Maximum number of PCI slot increased from 32 to 128
+    * Setup Table
+	- Maximum number of setup pages increased from 63 to 255
+	- Use tree view to select setup node instead of existing radio button
+    * Bank > 2 CMOS support
+ 2. Fixed Issues:
+    * File name with DBCS characters can't be removed from recent file
+      history
+
+2.0.25		06/29/2005
+ 1. New Features:
+    * Calculates ROM checksum upon opening, shown in status bar
+    * Support secure flash selective hashing
+	- Analyzes & re-arranges sigmod module (class code '$')
+	- Prevents modifying hashed modules
+    * If a file on the recent file list does not exist any more, it'll be
+      removed from the list
+ 2. Fixed Issues:
+    * For non-alphabet module class, use -C:0xXXNN instead
+    * Fail to analyze rest BCPs when a BCP size is greater than 128 bytes
+
+2.0.24		09/10/2004
+ 1. New Features:
+    * Splash Screen Editor:
+	- Script could be editable, however changes made to script will
+	  take effect after re-building the ROM, 'Emulation' will not
+	  reflect immediately.
+ 2. Fixed Issues:
+    * A 'Suscript Out Of Range' warning will appear upon opening ROM on a
+      Hyper-Threading enabled platform
+
+2.0.23		07/16/2004
+ 1. Fixed Issues:
+    * Recover the bad change made to 'BCPFCP' structure in FCP.INC -r1.37
+    * Can't locate BCPSYS if there's another signature in boot block
+    * PCI Routing Editor - Device_No will be set to 00 after changing
+
+2.0.22		05/25/2004
+ 1. New Features:
+    * ROM.LOG will be generated after analyzing BIOS
+ 2. Fixed Issues:
+    * Build BIOS menu enable/disable does not handle properly
+    * Splash Screen editor - Error 53 upon pressing "Emulate" button
+    * 1st generation core of SPLASH logos are not editable after utilizing
+      DCOMPILE.EXE
+ 3. Changed Behaviors:
+    * BB is not allowed to be greater than 64KB, since it must due to 
+      ROM corrupted (this is for SPR#TWN06041)
+
+2.0.21		03/01/2004
+ 1. Fixed Issues:
+    * Can't change OPROM
+
+2.0.20		01/16/2004
+ 1. New Features:
+    * Slpash Screen Editor:
+	- Splash screen emulation (Screen-Centric core only)
+ 2. Fixed Issues:
+    * Splash Screen Editor:
+	- Session crashes if SCRIPT.TXT specifies numbers but not file name
+
+2.0.19		12/10/2003
+ 1. New Features:
+    * Splash Screen Editor:
+	- Utilizes DCOMPILE.EXE to disassemble logo modules, best compatibility
+ 2. Fixed Issues:
+    * Project Panel:
+	- Add/Remove/Change a module might confirm a wrong one
+    * String Editor:
+	- If any DBCS languages were installed, the ROM will be corrupted 
+	  after editing string
+	- If running under DBCS OSes, editing strings will cause the border
+	  characters to be displayed incorrectly
+	- Korean language was added to DBCS language list
+	- Can't process TEXT mode display engine (STDTEXT.600)
+
+2.0.18		11/07/2003
+ 1. Fixed Issues:
+    * (Splash Screen Editor) Imported JPEG does not display immediately 
+      (this is a new issue of 2.0.16)
+
+2.0.17		11/06/2003
+ 1. New Features:
+    * (Spalsh Screen Editor) Shrink large logo
+    * Command line argument supported, so as drag & drop ROM file
+ 2. Fixed Issues:
+    * (Splash Screen Editor) Transparent color box will not be updated while
+      changing tab to another logo
+    * (Splash Screen Editor) Pasted or imported bitmap does not display 
+      immediately (this is a new issue of 2.0.16)
+    * (Splash Screen Editor) Some BIOSes might have incorrect console bar
+      after flashing the modified ROM with changed logos
+ 3. Changed Behaviors:
+    * Product name changed to "Phoenix BIOS Editor Pro"
+
+2.0.16		10/09/2003
+ 1. Fixed Issues:
+    * (Register Table Editor) 'Overflow' error upon certain ROMs, this is an
+      internal error
+ 2. Changed Behaviors:
+    * (Splash Screen Editor) Read-only logos will not be shown
+    * Comply with new product version policy
+
+Build 15	09/19/2003
+ 1. New Features:
+    * Embedded logo creation tool updated to v4.2 to support combined BMP/JPG
+    * Combined BMP/JPG logos supported
+
+Build 14	09/05/2003
+ 1. New Features:
+    * Newest Splash Screen core supported, this includes JPEG logo support
+2. Fixed Issues:
+    * Select flle from one of the recent files list, the order of the recent
+      history may not be correct      
+
+Build 13	08/21/2003
+ 1. Fixed Issues:
+    * String editor doesn't work under DBCS systems, any changes made will
+      crash the entire string module
+    * Can't handle stirng module size > 32KB
+    * (FirstBIOS Splash Screen) The console bar graphics were incorrect 
+      after changing any logos
+ 2. Changed Behaviors:
+    * Increase the number of recent files from 4 to 8
+
+Build 12	08/13/2003
+ 1. Fixed Issues:
+    * NV1 CMOS tokens corrupt, if any CMOS tokens in setup were stored in NV1,
+      the values will be wrong
+ 2. Changed Behaviors:
+    * Setup Table - Maximum number of nodes increased from 30 to 64
+
+Build 11	07/09/2003
+ 1. New Features:
+    * Splash Screen Editor - New command "PUT_OSB" supported
+	- BOOTSCRN.EXE upgraded to v3.1
+	- PREPARE.EXE upgraded to v2.07
+	- CATENATE.EXE upgraded to v2.96
+ 2. Fixed Features:
+    * Some projects will fail to boot (hangs at 38h or 98h) after mofifying
+      the BIOS, it's due to the -Z parameter was never implemented for ROMEXEC
+      modules.
+
+Build 10	06/18/2003
+ 1. Fixed Issues:
+    * Splash Screen Editor - Fail on ROM re-build on running BOOTSCRN.EXE
+
+Build 9		06/12/2003
+ 1. Fixed Issues:
+    * Splash Screen Editor - Fatal error if BOOTSCRN.BIN > 32KB
+
+Build 8		04/17/2003
+ 1. Fixed Issues:
+    * BU0009 (Re-Opened) - Fatal error upon logos with ".IMA" extension
+    * BU0028 - Tool bar changes are not saved from session to session.
+      User can modity the location and look of the Tool Bar by double-
+      clicking it but if they exit BIOS Editor and re-launch then the changes
+      will not be saved.
+      This is a design loophole, customization of the Tool Bar is disabled.
+
+Build 7		04/15/2003
+ 1. Fixed Some Issues of "Setup Emulation" Window:
+    * In 'Boot' menu, press Up/Down arrow keys may hang the system
+    * The left/right arrow keys still work in sub-menu
+
+Build 6		02/17/2003
+ 1. Changed Behaviors:
+    * Removed status bar component from ACPI window, a picture box was used
+      instead
+    * Move high-level protion of release notes to a new file README.TXT
+
+Build 5		01/30/2003
+ 1. Fixed Issues:
+    * BU0022/BU0024 - Spelling errors of About box & Splash tooltip
+    * BU0023 - Click the 'X' button, window will be closed instead minimized
+    * BU0026 - Toolbar changes are not saved from session to session
+    * About box has no boundary
+    * (Setup Table Window) The dot line around the selected setup node is 
+      incomplete
+    * If uncheck and then recheck project panel under the view menu, then the
+      resizing of the project menu will become corrupted
+    * (CPU & Strings) Check the 'footprint size' and then click 'Cancel' will
+      prompt 'Invalid Value'
+
+Build 4		01/27/2003
+ 1. Fixed Issues:
+    * BU0009/BU0010 - Fatal error upon paste/import logos
+    * BU0005 - Can't find help after opening a ROM
+    * BU0006 - Help documentation
+
+Build 3		01/22/2003
+ 1. New Features:
+    * Add "All File" option to 'Open ROM' dialog
+    * Renew all BCPs, data file build updates to 2C20
+ 2. Fixed Issues:
+    * "Can't build the ROM after editing" issue, it's a side-effect caused by
+      the fixed issue #4 of build 2
+    * "Can't save or load data" for BCP/Register/PCI Routing Editors
+    * "Can't build the BIOS after adding an OPROM"
+    * "The -N:x was not shown on Bank Setting"
+    * "Can't launch ACPI Editor by clicking at the ACPI module"
+    * "Select splash screen modules and click change button will show 'Logo
+      module error!'"
+    * "Decompress error - compressed modules (MODs) are limited to be less
+      than 64KB, or decompress will fail" issue
+ 3. Changed Behaviors:
+    * If opened a .WPH file, the save dialog will also save the changed ROM as
+      a .WPH file
+
+Build 2		12/19/2002
+ 1. New Features:
+    * Edit final ROM image instead of the small ROMs, LZINT only
+    * Supports 256-color QuietBoot logo format
+    * Supports FirstBIOS' Splash Screen
+    * ACPI ASL editor
+    * ROMEXEC relocation is now supported
+    * Unsupported module class is now allowed as an option
+    * PCI Routing Table Editor - now PIRQs are allowed to be greater than 3
+    * OPROM information implemented
+    * ESCDBANK command supported
+    * EXTESCD command supported and will be automatically inserted to ROM.SCR
+      if bit 7 of romImageInfo field of BCPSYS was set
+    * Fixed location modules information were supported, the ROMs made by
+      CATENATE.EXE v2.96 or up were also supported
+ 2. Fixed Issues:
+    * Hang on modifying 'NULL' string in setup table window, now NULL strings
+      are not editable
+    * Fixed "String module size can't exceed 32K" issue
+    * Core issue SPR# TWN02181 implemented - PCI Routing Table Editor now will
+      judge structure revision and choose a correct one, 
+      PNP\PTL\INCLUDE.003\ptlpci.inc must be -r1.75 or up to fix this issue
+    * When OEM module class has invalid character for file name, e.g. '<' '/'
+      BIOS Editor will fail to open it. This is now allowed.
+ 3. Changed Behaviors:
+    * 'Number of banks' now uses the formula: banks = file size / bank size
+    * 3rd party utility ASL.EXE removed, a warning will be shown instead
+    * 3rd party utility ALCHEMY removed, IMGCNVT.EXE was used instead 
+ 4. Usage of OEM-defined BCP structures
+    Sometimes OEMs might create their own BCPs for additional OEM features
+    etc. BIOS Editor won't be able to identify those OEM BCPs due to they were
+    not defined in BIOS core.
+    BIOS Editor provides a way for OEM BCPs, just cut & paste the OEM BCPs
+    structure definition (usually a INC file) to an individual file 
+    OEMDEFS.DAT and put it to the application directory, you're done!
+    BIOS Editor will automatically analyze & integrate the OEM data file.
+    Here's a sample content of ODEMDEFS.DAT:
+
+    ;------------------------------------------------------------------------
+    ; PhlashExpress BCP structure
+    ;------------------------------------------------------------------------
+    bcpPhlashExpressStruc STRUC
+      header        bcpHeader <'BCPFEX', 1, 1, SIZEOF bcpPhlashExpressStruc>
+      SMI IO Trap Port DD      bcpiSmiIoPort     ; Your comment #1
+      Value to out     DD      bcpiSmiCmdByte    ; Your comment #2
+      Is 32-bit SMI    DB      bcpiSmi32Bit      ; Your comment #3
+ 	  YES_IT_IS        EQU     000000001     ; Your comment #4
+          NO_IT_IS_NOT     EQU     000000000     ; Your comment #5
+    bcpPhlashExpressStruc ENDS
+
+Release 1.0
+-----------
+ 1. New Features:
+    * 'ACPI', 'WAVE', 'DECOMP' .. modules supported in 'Project Panel'
+    * New Quiet Boot Logo Format (PGX) supported (with or without palette)
+    * Multiple Quiet Logo supported
+    * PCI Routing Table implemented, the Device Number/Slot Label are editable
+    * Quiet Boot Logo - Added "Load/Save Logo Binary File" functions
+    * Setup Table - Re-analyze current menu every time strings changed to
+      reflect the newest strings
+    * Add/Remove/Change buttons completed for project panel
+    * Implemented MCD BCP special processes (BCPDEFS.TXT is also changed)
+    * Save & Load implemented for - Register/PCI/Part of DMI
+    * Save & Load implemented for DMI
+    * Added bitmap support for IRQ routing table
+    * 'Eval' & 'OEM' signon function supported (need new MAKE_BCP_POST macro)
+    * Added color support for all non-editable fields
+    * Added 'Setup Screen Emulation' feature
+    * Added 'Trial Version' check
+ 2. Fixed Issues:
+    * Can't cancel if add a hold setting
+    * Disabled project panel's 'Change' button for DISPMAN/SETUP/NODES
+    * Can't use Enter key to change highlighted grid cell
+    * Fixed long register name wrap-up problem
+ 3. Changed Behaviors:
+    * Removed slot index & attribute field in PCI window
+    * Close project first when import project, and close panel if user abort
+      on entering target name
+
+More Explanation For Various Messages
+=====================================
+Q: An unsupported module class 'X' was found at offset XXXX....
+A: BIOS Editor found a BIOS module with a class type which is not in the
+   'ROM Maker Suite' specification or the ROM may be corrupt.  If you select
+   continue and the ROM loads successfully, then it can be modified by BIOS
+   Editor, with the exception of the unsupported module class, and the message
+   can be ignored. An unsupported module class cannot be edited by BIOS Editor
+
+Q: BCP doesn't fit the configuration file....
+A: All BCP structures are examined by a configuration file (BCPDEFS.DAT).  This
+   file contains the latest information when released.  However, a newer BIOS
+   may contain additional BCP structures and may require an updated
+   configuration file.
+   Modifications should not be made to the identified BCP fields unless the
+   configuration file has been updated.  However, if modifications are only
+   made to other/supported BCP fields, then the message can be ignored.
+
+Q: 16-bit/32-bit PCI Routing Table Mismatch!...
+A: This could be caused by a corrupt ROM image.  However, the most
+   possible cause is: two versions (1.73 & 1.74) of PTLPCI.INC (Phoenix's 
+   source code control revision) breaks BIOS Editor.  If you need to modify the
+   PCI routing table, this would require a new ROM image by updating PTLPCI.INC
+   to be version 1.72 and below or 1.75 and above.  When you see this message,
+   the PCI routing table editor should not be used.  However, if modifications
+   to the PCI routing table are not required, then the message can be ignored.
+
+Format of string module
+***********************
+
+Start Size  Description
+----- ----- ---------------------------------------
+0000h 0018h BIOS ID (STRPACK-BIOS) \
+0018h 0002h Number of RLS           > String header
+001Ah 0002h Number of font         /
+	    RLS #0
+	    RLS #1
+              :
+            FNT #0
+            FNT #1
+	      :
+
+Format of RLS
+*************
+
+Start Size  Description
+----- ----- ----------------------------------------------------
+0000h 0002h Module size                           \
+0002h 0002h                                        \  
+0004h 0002h RLS module ID (us ct ... etc)           > RLS header
+0006h 0002h                                        /
+0008h 0002h Offset to language description string /
+000Ah 0002h Starting offset of strings
+	    Offset of string #0
+	    Offset of string #1
+		:
+	    String #0
+	    String #1
+		:

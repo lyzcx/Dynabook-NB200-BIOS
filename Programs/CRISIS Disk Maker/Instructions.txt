@@ -1,0 +1,19 @@
+--------------------------------LENOVO THINKPAD X200 TABLET - BIOS RECOVERY--------------------------------
+
+
+1.)Use a usb stick and do a format as FAT from windows.
+(I use 1gb stick)
+
+2.)Run WINCRIS.EXE select your formated usb stick Click the "Start" button whait and a message come and say to "Remove your stick 
+and reconect" So remove the stick click "OK" to the window (do not close the WINCRIS.EXE and dont click anything else) and reconect.
+Afer choose "YES" in the windows say "Do you whant to format onother crisis disk?" and click again the "Start" button.
+(This is to make sure we update the CRISBOOT.BIN in usb boot sector. For me works like that.)
+(If WINCRIS.EXE doesnt run and give an error try to run it in compatibility mod)
+
+3.)Remove your stick and reconect, copy in the stick the "MINIDOS.SYS"-"PHLASH16.EXE"
+and finaly your bios with name: bios.wph.
+
+
+
+
+Bios.wph include in the zip is for Lenovo thinkpad x200
